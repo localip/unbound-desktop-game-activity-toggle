@@ -19,12 +19,13 @@ const [
 
 export default class extends Plugin {
    start() {
-      Patcher.before(Menu, 'default', (_, [props]) => {
-         if (props?.navId !== 'status-picker') return;
+      Patcher.before(Menu, 'default', (_, args) => {
+         const props = args[0];
+
+         if (props?.navId !== 'status-picker') return args;
 
          const invisible = props.children.find(c => c.props.id === 'invisible');
          const idx = props.children.indexOf(invisible);
-         if (idx < 0) return;
 
          if (!props.children.find(c => c?.props?.id == 'game-activity-toggle')) {
             const enabled = Settings.ShowCurrentGame.getSetting();
