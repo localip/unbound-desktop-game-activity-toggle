@@ -1,15 +1,15 @@
-import { getByProps } from '@webpack';
+import { findByProps } from '@webpack';
 import React from 'react';
 
-const classes = getByProps('strikethrough', 'nameTag');
+const classes = findByProps('strikethrough', 'nameTag');
 
-export default React.memo(props => {
+export default React.memo((props: Record<string, any>) => {
    return <svg
+      {...props}
       viewBox={'0 0 24 24'}
       width={props.width || '16'}
       height={props.height || '16'}
       className='game-activity-toggle-joystick'
-      style={{ 'margin-left': '-2px' }}
    >
       <path
          fill='currentColor'

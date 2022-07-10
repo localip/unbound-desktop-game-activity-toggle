@@ -1,12 +1,13 @@
 {
    "name": "Game Activity Toggle",
+   "description": "Adds an option to the status menu to toggle your game activity display.",
+   "version": "1.0.0",
    "authors": [
       {
          "name": "eternal",
          "id": "263689920210534400"
       }
    ],
-   "description": "Adds an option to the status menu to toggle your game activity display.",
-   "version": "1.0.0",
+   "main": "dist",
    "id": "eternal.game-activity-toggle"
 }
